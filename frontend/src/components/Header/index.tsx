@@ -5,7 +5,7 @@ import { HeaderWrapper } from "../Header/styles";
 const Header: React.FC = () => {
   return (
     <HeaderWrapper>
-      <img src={logo} alt="logo" style={{ width: '80%'}}/>
+      <img src={logo} alt="logo" style={{ width: '20%'}}/>
       {/* <Title>Street Car Club</Title>
       <Subtitle>Calculadora Penal</Subtitle> */}
     </HeaderWrapper>
