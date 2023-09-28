@@ -4,7 +4,7 @@ import { Money } from '../../utils/ConvertMoney';
 import { CalculatorContainer } from './styles';
 
 const Calculator: React.FC = () => {
-  const { jailSentence, setJailSentence } = useCalculatorContext();
+  const { jailSentence, setJailSentence, setCheckboxStates } = useCalculatorContext();
 
   const handleCopyClick = async () => {
     try {
@@ -14,7 +14,23 @@ const Calculator: React.FC = () => {
     } catch (error) {
       console.error('Erro ao copiar texto: ', error);
     }
-  };  
+  };
+
+  const handleClear = () => {
+    setJailSentence({
+      sentence: 0,
+      trafficFine: 0,
+      bail: 0,
+      conditional: 0,
+      crimes: [],
+    });
+    setCheckboxStates({
+      adv: false,
+      primario: false,
+      reincidente: false,
+      condicional: false,
+    });
+  }
 
   return (
     <CalculatorContainer>
@@ -40,13 +56,7 @@ const Calculator: React.FC = () => {
       </label>
       <div>
         <button onClick={handleCopyClick}>Copiar</button>
-        <button className="clear-button" onClick={() => setJailSentence({
-              sentence: 0,
-              trafficFine: 0,
-              bail: 0,
-              conditional: 0,
-              crimes: [],
-            })}>Limpar</button>
+        <button className="clear-button" onClick={handleClear}>Limpar</button>
       </div>
     </CalculatorContainer>
   );

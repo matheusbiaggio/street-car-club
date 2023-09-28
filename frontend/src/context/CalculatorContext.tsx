@@ -1,9 +1,11 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
-import { JailSentence } from '../interfaces/CrimeItem';
+import { CheckboxStates, JailSentence } from '../interfaces/CrimeItem';
 
 interface CalculatorContextType {
   jailSentence: JailSentence;
   setJailSentence: React.Dispatch<React.SetStateAction<JailSentence>>;
+  checkboxStates: CheckboxStates;
+  setCheckboxStates: React.Dispatch<React.SetStateAction<CheckboxStates>>;
 }
 
 const CalculatorContext = createContext<CalculatorContextType | undefined>(undefined);
@@ -18,11 +20,21 @@ export const CalculatorProvider = ({ children }: { children: ReactNode }) => {
     crimes: [],
   };
 
+  const initialCheckboxStates: CheckboxStates = {
+    adv: false,
+    primario: false,
+    reincidente: false,
+    condicional: false,
+  }
+
   const [jailSentence, setJailSentence] = useState<JailSentence>(initialJailSentence);
+  const [checkboxStates, setCheckboxStates] = useState<CheckboxStates>(initialCheckboxStates);
 
   const contextValue: CalculatorContextType = {
     jailSentence,
     setJailSentence,
+    checkboxStates,
+    setCheckboxStates,
     // Outras propriedades do contexto, se necessário
   };
 

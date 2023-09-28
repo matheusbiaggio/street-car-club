@@ -22,3 +22,10 @@ export interface JailSentence {
   conditional: number;
   crimes: string[];
 }
+
+export interface CheckboxStates {
+  adv: boolean;
+  primario: boolean;
+  reincidente: boolean;
+  condicional: boolean;
+}
