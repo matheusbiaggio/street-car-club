@@ -16,7 +16,7 @@ const Soothes: React.FC = () => {
         factor = checked ? 0.5 : 2.0;
         break;
       case 'reincidente':
-        factor = checked ? 1.1 : 0.9091;
+        factor = checked ? 1.1 : 0.9;
         break;
       case 'condicional':
         factor = checked ? 1.25 : 0.8;

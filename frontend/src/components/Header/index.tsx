@@ -1,11 +1,13 @@
 import React from 'react';
-import { HeaderWrapper, Subtitle, Title } from "../Header/styles";
+import logo from '../../assets/logo.png'
+import { HeaderWrapper } from "../Header/styles";
 
 const Header: React.FC = () => {
   return (
     <HeaderWrapper>
-      <Title>Street Car Club</Title>
-      <Subtitle>Calculadora Penal</Subtitle>
+      <img src={logo} alt="logo" style={{ width: '80%'}}/>
+      {/* <Title>Street Car Club</Title>
+      <Subtitle>Calculadora Penal</Subtitle> */}
     </HeaderWrapper>
   );
 };
