@@ -35,8 +35,8 @@ const Calculator: React.FC = () => {
   return (
     <CalculatorContainer>
       <label htmlFor="sentence">
-        PENA (MÁXIMO 180 MESES)
-        <input value={jailSentence.sentence <= 180 ? jailSentence.sentence : 180} id="sentence" disabled />
+        PENA (MÁXIMO 120 MESES)
+        <input value={jailSentence.sentence <= 120 ? jailSentence.sentence : 120} id="sentence" disabled />
       </label>
       <label htmlFor="trafficFine">
         MULTA
