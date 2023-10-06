@@ -8,16 +8,17 @@ interface CrimesProps {
 }
 
 const Crimes: React.FC<CrimesProps> = ({ list }) => {
-  const { jailSentence, setJailSentence } = useCalculatorContext();
+  const { jailSentence, setJailSentence, inputsValues, setInputsValues } = useCalculatorContext();
 
   const handleInputChange6 = (value: number) => {
+    setInputsValues({ ...inputsValues, notas: value });
     if (value >= 10000) {
       const increment = Math.floor(value / 10000);
-      setJailSentence({
-        ...jailSentence,
+      setJailSentence((prevJailSentence) => ({
+        ...prevJailSentence,
         sentence: jailSentence.sentence + 5 * increment,
         trafficFine: jailSentence.trafficFine + 5000 * increment,
-      });
+      }));
     } else {
       setJailSentence({
         ...jailSentence,
@@ -28,6 +29,7 @@ const Crimes: React.FC<CrimesProps> = ({ list }) => {
   };
 
   const handleInputChange19 = (value: number) => {
+    setInputsValues({...inputsValues, entorpecente: value});
     if (value >= 10) {
       const increment = Math.floor(value / 10);
       setJailSentence({
@@ -45,6 +47,7 @@ const Crimes: React.FC<CrimesProps> = ({ list }) => {
   };
 
   const handleInputChange29 = (value: number) => {
+    setInputsValues({...inputsValues, municao: value});
     if (value >= 25) {
       const increment = Math.floor(value / 25);
       setJailSentence({
@@ -60,6 +63,7 @@ const Crimes: React.FC<CrimesProps> = ({ list }) => {
   };
 
   const handleInputChange43 = (value: number) => {
+    setInputsValues({...inputsValues, armas: value});
     if (value >= 6) {
       const increment = Math.floor(value / 6);
       setJailSentence({
@@ -75,6 +79,7 @@ const Crimes: React.FC<CrimesProps> = ({ list }) => {
   };
 
   const handleInputChange44 = (value: number) => {
+    setInputsValues({...inputsValues, colete: value})
     if (value >= 4) {
       const increment = Math.floor(value / 4);
       setJailSentence({
@@ -125,18 +130,22 @@ const Crimes: React.FC<CrimesProps> = ({ list }) => {
             />
             <ContainerCrimeInput>
               {element.crime}
-              {element.crime === 'Art. 6º Posse de Notas Marcadas' && (
-                <input
-                type="number"
-                placeholder='A cada 10k unidades'
-                onChange={(e) => handleInputChange6(parseInt(e.target.value, 10))}
-              />
+              {jailSentence.crimes.includes(element.crime) && (
+                element.crime === 'Art. 6º Posse de Notas Marcadas' && (
+                  <input
+                    type="number"
+                    placeholder="A cada 10k unidades"
+                    value={inputsValues.notas}
+                    onChange={(e) => handleInputChange6(parseInt(e.target.value, 10))}
+                  />
+                )
               )}
               {jailSentence.crimes.includes(element.crime) && (
                 element.crime === 'Art. 19º Tráfico de entorpecente' && (
                   <input
                     type="number"
                     placeholder='A cada 10 unidades'
+                    value={inputsValues.entorpecente}
                     onChange={(e) => handleInputChange19(parseInt(e.target.value, 10))}
                   />
                 )
@@ -146,6 +155,7 @@ const Crimes: React.FC<CrimesProps> = ({ list }) => {
                   <input
                     type="number"
                     placeholder='A cada 25 unidades'
+                    value={inputsValues.municao}
                     onChange={(e) => handleInputChange29(parseInt(e.target.value, 10))}
                   />
                 )
@@ -155,12 +165,17 @@ const Crimes: React.FC<CrimesProps> = ({ list }) => {
                   <select
                     name="doloso"
                     id="doloso"
+                    value={inputsValues.homicidio}
                     onChange={(e) => {
                       const selectedValue = parseInt(e.target.value, 10);
                       setJailSentence({
                         ...jailSentence,
                         trafficFine: 20000 * selectedValue,
                       });
+                      setInputsValues({
+                        ...inputsValues,
+                        homicidio: parseInt(e.target.value, 10),
+                      })
                     }}
                   >
                     <option value="" disabled>Selecione</option>
@@ -176,6 +191,7 @@ const Crimes: React.FC<CrimesProps> = ({ list }) => {
                   <input
                     type="number"
                     placeholder='A cada 6 unidades'
+                    value={inputsValues.armas}
                     onChange={(e) => handleInputChange43(parseInt(e.target.value, 10))}
                   />
                 )
@@ -185,6 +201,7 @@ const Crimes: React.FC<CrimesProps> = ({ list }) => {
                   <input
                     type="number"
                     placeholder='A cada 4 unidades'
+                    value={inputsValues.colete}
                     onChange={(e) => handleInputChange44(parseInt(e.target.value, 10))}
                   />
                 )

@@ -4,7 +4,7 @@ import { Money } from '../../utils/ConvertMoney';
 import { CalculatorContainer } from './styles';
 
 const Calculator: React.FC = () => {
-  const { jailSentence, setJailSentence, setCheckboxStates } = useCalculatorContext();
+  const { jailSentence, setJailSentence, setCheckboxStates, setInputsValues } = useCalculatorContext();
 
   const handleCopyClick = async () => {
     try {
@@ -30,6 +30,14 @@ const Calculator: React.FC = () => {
       reincidente: false,
       condicional: false,
     });
+    setInputsValues({
+      notas: 0,
+      entorpecente: 0,
+      municao: 0,
+      homicidio: 1,
+      armas: 0,
+      colete: 0,
+    })
   }
 
   return (

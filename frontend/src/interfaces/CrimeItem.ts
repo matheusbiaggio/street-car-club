@@ -29,3 +29,12 @@ export interface CheckboxStates {
   reincidente: boolean;
   condicional: boolean;
 }
+
+export interface InputsValues {
+  notas: number;
+  entorpecente: number;
+  municao: number;
+  homicidio: number;
+  armas: number;
+  colete: number;
+}
