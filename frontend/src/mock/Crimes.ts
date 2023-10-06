@@ -221,9 +221,9 @@ export const SEGUNDO_GRAU = [
   {
     id: 12,
     crime: 'Art. 28º Receptação de veículo',
-    multa: 2500,
-    fianca: 15000,
-    servico: 15,
+    multa: 10000,
+    fianca: 25000,
+    servico: 25,
     descricao: 'Estar em posse de qualquer veículo roubado ou que não seja seu.'
   },
   {
@@ -297,6 +297,14 @@ export const SEGUNDO_GRAU = [
     fianca: 10000,
     servico: 15,
     descricao: 'Efetuar um roubo a um Carro Forte.'
+  },
+  {
+    id: 22,
+    crime: 'Art. 65º Receptação de Produtos',
+    multa: 15000,
+    fianca: 30000,
+    servico: 30,
+    descricao: 'Adquirir, receber, transportar, conduzir ou ocultar, em proveito próprio ou alheio, coisa que sabe ser produto de crime, ou influir para que terceiro, de boa-fé, a adquira, receba ou oculte.'
   }
 ]
 
@@ -388,6 +396,14 @@ export const TERCEIRO_GRAU = [
     fianca: 0,
     servico: 180,
     descricao: 'Aplicar golpe de venda de veículos, residencias ou financeiro.'
+  },
+  {
+    id: 11,
+    crime: 'Art. 64º Formação de Quadrilha',
+    multa: 50000,
+    fianca: 0,
+    servico: 50,
+    descricao: 'Associarem-se 3 (três) ou mais pessoas, para o fim específico de cometer crimes.'
   }
 ]
 

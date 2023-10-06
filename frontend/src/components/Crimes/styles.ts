@@ -14,14 +14,13 @@ export const CrimesContainer = styled.div`
 
   ul {
     list-style-type: none;
-    padding: 0;
   }
 
   li {
     display: flex;
     align-items: center;
     font-size: 1.2rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
     input[type="checkbox"] {
       margin-right: 10px;
@@ -29,3 +28,24 @@ export const CrimesContainer = styled.div`
     }
   }
 `;
+
+export const ContainerCrimeInput = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  input {
+    width: 200px;
+    height: 25px;
+
+    padding: 5px 10px;
+  }
+
+  select {
+    width: 200px;
+    height: 25px;
+
+    padding: 3px 10px;
+  }
+`
