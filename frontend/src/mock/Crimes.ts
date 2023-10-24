@@ -533,7 +533,7 @@ export const TRANSITO = [
     crime: 'Art. 66 - Documentação veicular irregular',
     multa: 30000,
     fianca: 0,
-    servicos: 0,
+    servico: 0,
     descricao: 'Dirigir veículo automotor, em via pública com documentação irregular, não condizente com as modificações ou características do veículo.'
   },
   {
@@ -541,7 +541,7 @@ export const TRANSITO = [
     crime: 'Art. 67 - Conduzir veículo na contra mão',
     multa: 5000,
     fianca: 0,
-    servicos: 0,
+    servico: 0,
     descricao: 'Conduzir veículo no sentido contrário da pista.'
   },
   {
@@ -549,7 +549,7 @@ export const TRANSITO = [
     crime: 'Art. 69 - Poluição sonora',
     multa: 10000,
     fianca: 0,
-    servicos: 0,
+    servico: 0,
     descricao: 'Utilizar em veículos de qualquer espécie, equipamento que produza som audível pelo lado externo, independentemente do volume ou frequência, que perturbe o sossego público, nas vias terrestres abertas à circulação.'
   }
 ]
