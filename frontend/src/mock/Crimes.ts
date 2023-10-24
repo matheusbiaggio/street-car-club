@@ -305,6 +305,14 @@ export const SEGUNDO_GRAU = [
     fianca: 30000,
     servico: 30,
     descricao: 'Adquirir, receber, transportar, conduzir ou ocultar, em proveito próprio ou alheio, coisa que sabe ser produto de crime, ou influir para que terceiro, de boa-fé, a adquira, receba ou oculte.'
+  },
+  {
+    id: 23,
+    crime: 'Art. 70º Lei do silêncio',
+    multa: 15000,
+    fianca: 0,
+    servico: 15,
+    descricao: 'Emissão de som que, direta ou indiretamente, seja ofensiva ou nociva à saúde, à segurança e ao bem-estar da coletividade. '
   }
 ]
 
@@ -519,6 +527,30 @@ export const TRANSITO = [
     fianca: 0,
     servico: 120,
     descricao: 'Provocar e/ou incitar acompanhamento policial sem necessidade.'
+  },
+  {
+    id:15,
+    crime: 'Art. 66 - Documentação veicular irregular',
+    multa: 30000,
+    fianca: 0,
+    servicos: 0,
+    descricao: 'Dirigir veículo automotor, em via pública com documentação irregular, não condizente com as modificações ou características do veículo.'
+  },
+  {
+    id:16,
+    crime: 'Art. 67 - Conduzir veículo na contra mão',
+    multa: 5000,
+    fianca: 0,
+    servicos: 0,
+    descricao: 'Conduzir veículo no sentido contrário da pista.'
+  },
+  {
+    id:17,
+    crime: 'Art. 69 - Poluição sonora',
+    multa: 10000,
+    fianca: 0,
+    servicos: 0,
+    descricao: 'Utilizar em veículos de qualquer espécie, equipamento que produza som audível pelo lado externo, independentemente do volume ou frequência, que perturbe o sossego público, nas vias terrestres abertas à circulação.'
   }
 ]
 
